@@ -52,3 +52,20 @@ handlers.SendPush = function (args)
 		Message: args.message
 	});
 }
+
+
+handlers.RetrievePush = function (args)
+{
+	var result = server.GetUserData({ PlayFabId: currentPlayerId });
+
+	var dict ={};
+	dict["ROOM_KEY"] = "";
+
+	var updateUserDataResult = server.UpdateUserData({
+	PlayFabId: currentPlayerId,
+	Data: dict,
+	Permission: "Public"
+	});
+	
+	return result;
+}
