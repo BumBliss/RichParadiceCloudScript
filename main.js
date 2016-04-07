@@ -61,6 +61,7 @@ handlers.RetrievePush = function (args)
 
 	var dict ={};
 	dict["ROOM_KEY"] = "";
+	dict["INVITATION_PLAYER"] = "";
 
 	var updateUserDataResult = server.UpdateUserData({
 	PlayFabId: currentPlayerId,
