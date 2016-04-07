@@ -59,10 +59,7 @@ handlers.RetrievePush = function (args)
 {
 	var userData = server.GetUserData({ PlayFabId: currentPlayerId });
 
-	var result = { 
-		"ROOM_KEY" : userData.Data["ROOM_KEY"].Value,
-		"INVITATION_PLAYER" : userData.Data["INVITATION_PLAYER"].Value
-	};
+	var result = { ROOM_KEY : userData.Data["ROOM_KEY"].Value, INVITATION_PLAYER : userData.Data["INVITATION_PLAYER"].Value};
 
 	var dict ={};
 	dict["ROOM_KEY"] = "";
