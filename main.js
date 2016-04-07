@@ -1,6 +1,6 @@
 handlers.helloWorld = function (args)
 {
-	var message = "Welcome " + args.name;
+	var message = "Hi " + args.name;
 	log.info(message);
 
 	return { messageValue: message };
