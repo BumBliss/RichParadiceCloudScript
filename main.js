@@ -39,7 +39,7 @@ handlers.SendPush = function (args)
 	if(args.roomName!=""){
 		var dict ={};
 		dict["ROOM_KEY"] = args.roomName;
-		dict["INVITATION_PLAYER"] = currentPlayerId;
+		dict["INVITE_MESSAGE"] = currentPlayerId;
 		
 		var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: args.playFabId,
@@ -59,11 +59,11 @@ handlers.RetrievePush = function (args)
 {
 	var userData = server.GetUserData({ PlayFabId: currentPlayerId });
 
-	var result = { ROOM_KEY : userData.Data["ROOM_KEY"].Value, INVITATION_PLAYER : userData.Data["INVITATION_PLAYER"].Value};
+	var result = { ROOM_KEY : userData.Data["ROOM_KEY"].Value, INVITE_MESSAGE : userData.Data["INVITE_MESSAGE"].Value};
 
 	var dict ={};
 	dict["ROOM_KEY"] = "";
-	dict["INVITATION_PLAYER"] = "";
+	dict["INVITE_MESSAGE"] = "";
 
 	var updateUserDataResult = server.UpdateUserData({
 	PlayFabId: currentPlayerId,
